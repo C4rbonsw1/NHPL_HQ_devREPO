@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using NHPL_HQ.Models;
 //using NHPL_HQ.Models;
 
 namespace IdentitySample.Models
@@ -81,7 +82,8 @@ namespace IdentitySample.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        //public Practice Practice { get; set; }
+        public Practice Practice { get; set; }
+        public RoleViewModel Role { get; set; }
         //public IEnumerable<System.Web.Mvc.SelectListItem> PracticeList { get; set; }
       }
 

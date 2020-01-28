@@ -1,16 +1,29 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using IdentitySample.Models;
 
 namespace IdentitySample.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext dbContext = new ApplicationDbContext();
+        
+
         [HttpGet]
         public ActionResult Index()
         {
-            if (!User.Identity.IsAuthenticated) {
+
+            if (!User.Identity.IsAuthenticated)
+            {
                 return Redirect("~/Account/Login");
             }
-                return View();
+            //else if (User.Identity.IsAuthenticated) 
+            //{
+            //    var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Id = model.Role.Id};
+            //    var userRole = dbContext.Roles.Where(x => x.Id == model.Role.Id).First();
+            //    return Redirect("~/Home/Staff");
+            //}
+            return View();
         }
 
         [HttpGet]

@@ -7,7 +7,7 @@
 
 <br />
 <div class="card">
-    @using (Html.BeginForm("UploadRota", "Rota", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("UploadRota", "Rota", FormMethod.Post))
     {
         <label> Select files:</label>
         <input type="file" name="files" multiple="multiple" />
@@ -16,6 +16,8 @@
         <span style="color:red">@Html.Raw(ViewBag.SuccessMessage)</span>
     }
 </div>
+<div>@Html.Raw(ViewBag.WordHtml)</div>
+
 
 
 
