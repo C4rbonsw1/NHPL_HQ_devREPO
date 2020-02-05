@@ -24,6 +24,8 @@ namespace IdentitySample.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Practice> Practices { get; set; }
+        public DbSet<Rota> Rotas { get; set; }
+        public DbSet<Shift> Shifts { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -32,11 +34,10 @@ namespace IdentitySample.Models
 
         static ApplicationDbContext()
         {
-        // Set the database intializer which is run once during application start
-        // This seeds the database with admin user credentials and admin role
-        Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
+            // Set the database intializer which is run once during application start
+            // This seeds the database with admin user credentials and admin role
+            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
         }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

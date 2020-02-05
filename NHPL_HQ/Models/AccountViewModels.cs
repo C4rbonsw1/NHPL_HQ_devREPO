@@ -83,9 +83,9 @@ namespace IdentitySample.Models
         public string ConfirmPassword { get; set; }
 
         public Practice Practice { get; set; }
+        public IEnumerable<System.Web.Mvc.SelectListItem> PracticeList { get; set; }
         public RoleViewModel Role { get; set; }
-        //public IEnumerable<System.Web.Mvc.SelectListItem> PracticeList { get; set; }
-      }
+    }
 
     public class ResetPasswordViewModel
     {

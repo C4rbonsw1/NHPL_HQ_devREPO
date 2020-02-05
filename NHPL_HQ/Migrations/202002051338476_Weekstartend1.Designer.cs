@@ -7,13 +7,13 @@ namespace NHPL_HQ.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateDatabase130120205 : IMigrationMetadata
+    public sealed partial class Weekstartend1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabase130120205));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Weekstartend1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001131102367_Update-Database-13012020-5"; }
+            get { return "202002051338476_Weekstartend1"; }
         }
         
         string IMigrationMetadata.Source

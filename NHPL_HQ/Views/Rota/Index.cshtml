@@ -1,8 +1,116 @@
-﻿
+﻿@model NHPL_HQ.Models.ShiftRotaVM
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2 style="color:white">Rotas</h2>
+<h2 style="color:white">@Html.DisplayFor(model => model.Practice.Name)</h2>
+<h2 style="color:white">"Week commencing" @Html.DisplayFor(model => model.Shift.ShiftDate).ToString()</h2>
+
+
+
+<table class="table" style="color:white">
+    <tr>
+        <th>
+            Shift Date
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift.Location)
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            Monday 1st
+        </td>
+        @foreach (var item in Model.ShiftDatesMonday)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
+    @*<tr>
+        <td>
+            Teusday 2nd
+        </td>
+        @foreach (var item in Model.ShiftViewModel)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>
+            Wednesday 3rd
+        </td>
+        @foreach (var item in Model.ShiftViewModel)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>
+            Thursday 4th
+        </td>
+        @foreach (var item in Model.ShiftViewModel)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>
+            Thursday 5th
+        </td>
+        @foreach (var item in Model.ShiftViewModel)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>*@
+</table>
+
+
+@*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>*@
 

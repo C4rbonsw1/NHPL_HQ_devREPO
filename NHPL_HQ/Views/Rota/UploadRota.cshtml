@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "UploadRota";
+    ViewBag.Title = "Upload Rota";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -7,7 +7,7 @@
 
 <br />
 <div class="card">
-    @using (Html.BeginForm("UploadRota", "Rota", FormMethod.Post))
+    @using (Html.BeginForm("UploadRota", "Rota", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <label> Select files:</label>
         <input type="file" name="files" multiple="multiple" />
@@ -16,7 +16,8 @@
         <span style="color:red">@Html.Raw(ViewBag.SuccessMessage)</span>
     }
 </div>
-<div>@Html.Raw(ViewBag.WordHtml)</div>
+<div>@Html.Raw(ViewBag.dtResult)</div>
+
 
 
 
