@@ -10,16 +10,17 @@ namespace NHPL_HQ.Models
         public Shift Shift { get; set; }
         public Rota Rota { get; set; }
         public Practice Practice { get; set; }
+        public File Files { get; set; }
         public List<Shift> ShiftViewModel { get; set; }
         public List<Rota> RotaViewModel { get; set; }
 
-        public List<Shift> ShiftDatesMonday { get; set; }
-        public List<Shift> ShiftDatesTesuday { get; set; }
-        public List<Shift> ShiftDatesWednesday { get; set; }
-        public List<Shift> ShiftDatesThursday { get; set; }
-        public List<Shift> ShiftDatesFriday {get; set; }
-        public List<Shift> ShiftDatesSaturday { get; set; }
-        public List<Shift> ShiftDatesSunday { get; set; }
+        public IEnumerable<Shift> ShiftDatesMonday { get; set; }
+        public IEnumerable<Shift> ShiftDatesTeusday { get; set; }
+        public IEnumerable<Shift> ShiftDatesWednesday { get; set; }
+        public IEnumerable<Shift> ShiftDatesThursday { get; set; }
+        public IEnumerable<Shift> ShiftDatesFriday {get; set; }
+        public IEnumerable<Shift> ShiftDatesSaturday { get; set; }
+        public IEnumerable<Shift> ShiftDatesSunday { get; set; }
 
 
 

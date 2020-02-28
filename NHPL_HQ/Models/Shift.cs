@@ -18,5 +18,24 @@ namespace NHPL_HQ.Models
         public virtual ApplicationUser Employee { get; set; }
         public virtual Practice Practice { get; set; }
 
+        public List<string> shiftLocations;
+        public List<string> shiftEmployees;
+        public List<string> shiftDates;
+        //public void AddShiftLocation(string shiftLocation)
+        //{
+            
+        //    shiftLocations.Add(shiftLocation);
+        //}
+        //public void AddShiftEmployee(string shiftEmployees)
+        //{
+        //    shiftLocations.Add(shiftEmployees);
+        //}
+        //public void AddShiftDate(string shiftDates)
+        //{
+        //    shiftLocations.Add(shiftDates);
+        //}
+
     }
+
+
 }

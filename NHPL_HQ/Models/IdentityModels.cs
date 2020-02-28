@@ -26,6 +26,7 @@ namespace IdentitySample.Models
         public DbSet<Practice> Practices { get; set; }
         public DbSet<Rota> Rotas { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<File> Files { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

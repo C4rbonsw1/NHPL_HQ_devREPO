@@ -62,6 +62,8 @@ namespace IdentitySample.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public RoleViewModel Roles { get; set; }
     }
 
     public class RegisterViewModel

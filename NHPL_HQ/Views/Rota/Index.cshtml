@@ -5,54 +5,63 @@
 }
 
 <h2 style="color:white">Rotas</h2>
-<h2 style="color:white">@Html.DisplayFor(model => model.Practice.Name)</h2>
+<h2 style="color:white">@Html.DisplayFor(model => model.Practice.Name)</h2> 
 <h2 style="color:white">"Week commencing" @Html.DisplayFor(model => model.Shift.ShiftDate).ToString()</h2>
 
 
 
-<table class="table" style="color:white">
-    <tr>
-        <th>
-            Shift Date
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shift.Location)
-        </th>
-    </tr>
+<table class="table" style="color:white;">
+    @* <tr>
+          @foreach (var item in Model.ShiftDatesMonday)
+            {
+                <th style="color:white">
+                    @Html.DisplayFor(model => item.Location)
+                </th>
+               <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Shift.Location)
+                </th>
+            }
+        </tr>*@
 
     <tr>
+        <td> </td>
+        @foreach (var item in Model.ShiftDatesMonday)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+        }
+    </tr>
+    <tr>
         <td>
-            Monday 1st
+            Monday
         </td>
         @foreach (var item in Model.ShiftDatesMonday)
         {
@@ -61,11 +70,11 @@
             </td>
         }
     </tr>
-    @*<tr>
+    <tr>
         <td>
-            Teusday 2nd
+            Teusday
         </td>
-        @foreach (var item in Model.ShiftViewModel)
+        @foreach (var item in Model.ShiftDatesTeusday)
         {
             <td>
                 @Html.DisplayFor(modelItem => item.Employee.UserName)
@@ -74,9 +83,9 @@
     </tr>
     <tr>
         <td>
-            Wednesday 3rd
+            Wednesday
         </td>
-        @foreach (var item in Model.ShiftViewModel)
+        @foreach (var item in Model.ShiftDatesWednesday)
         {
             <td>
                 @Html.DisplayFor(modelItem => item.Employee.UserName)
@@ -85,9 +94,9 @@
     </tr>
     <tr>
         <td>
-            Thursday 4th
+            Thursday
         </td>
-        @foreach (var item in Model.ShiftViewModel)
+        @foreach (var item in Model.ShiftDatesThursday)
         {
             <td>
                 @Html.DisplayFor(modelItem => item.Employee.UserName)
@@ -96,15 +105,37 @@
     </tr>
     <tr>
         <td>
-            Thursday 5th
+            Friday
         </td>
-        @foreach (var item in Model.ShiftViewModel)
+        @foreach (var item in Model.ShiftDatesFriday)
         {
             <td>
                 @Html.DisplayFor(modelItem => item.Employee.UserName)
             </td>
         }
-    </tr>*@
+    </tr>
+    <tr>
+        <td>
+            Saturday
+        </td>
+        @foreach (var item in Model.ShiftDatesSaturday)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
+    <tr>
+        <td>
+            Sunday
+        </td>
+        @foreach (var item in Model.ShiftDatesSunday)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.UserName)
+            </td>
+        }
+    </tr>
 </table>
 
 

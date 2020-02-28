@@ -254,16 +254,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002051338476_Weekstartend1.cs" />
-    <Compile Include="Migrations\202002051338476_Weekstartend1.Designer.cs">
-      <DependentUpon>202002051338476_Weekstartend1.cs</DependentUpon>
+    <Compile Include="Migrations\202002271318445_rota Image Post.cs" />
+    <Compile Include="Migrations\202002271318445_rota Image Post.Designer.cs">
+      <DependentUpon>202002271318445_rota Image Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002271431303_rota Image Post2.cs" />
+    <Compile Include="Migrations\202002271431303_rota Image Post2.Designer.cs">
+      <DependentUpon>202002271431303_rota Image Post2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002281107275_rota Image Post3.cs" />
+    <Compile Include="Migrations\202002281107275_rota Image Post3.Designer.cs">
+      <DependentUpon>202002281107275_rota Image Post3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Practice.cs" />
+    <Compile Include="Models\PracticeEnums.cs" />
     <Compile Include="Models\Rota.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\ShiftRotaVM.cs" />
@@ -420,8 +431,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002051338476_Weekstartend1.resx">
-      <DependentUpon>202002051338476_Weekstartend1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002271318445_rota Image Post.resx">
+      <DependentUpon>202002271318445_rota Image Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002271431303_rota Image Post2.resx">
+      <DependentUpon>202002271431303_rota Image Post2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002281107275_rota Image Post3.resx">
+      <DependentUpon>202002281107275_rota Image Post3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

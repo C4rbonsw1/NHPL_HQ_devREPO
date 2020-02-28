@@ -7,13 +7,13 @@ namespace NHPL_HQ.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Weekstartend1 : IMigrationMetadata
+    public sealed partial class rotaImagePost3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Weekstartend1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(rotaImagePost3));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002051338476_Weekstartend1"; }
+            get { return "202002281107275_rota Image Post3"; }
         }
         
         string IMigrationMetadata.Source
