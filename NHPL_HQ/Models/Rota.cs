@@ -13,5 +13,7 @@ namespace NHPL_HQ.Models
         public string Extension { get; set; }
         public DateTime UploadedTimeStamp { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual Practice Practice { get; set; }
+        public virtual File File { get; set; }
     }
 }

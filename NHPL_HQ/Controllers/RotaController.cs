@@ -28,25 +28,31 @@ namespace NHPL_HQ.Controllers
         // GET: Rota
         public ActionResult Index()
         {
-            ShiftRotaVM viewModel = new ShiftRotaVM();
 
-            IEnumerable<Shift> shiftMondayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Monday).ToList();
-            IEnumerable<Shift> shiftTeusdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Tuesday).ToList();
-            IEnumerable<Shift> shiftWednesdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Wednesday).ToList();
-            IEnumerable<Shift> shiftThursdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Thursday).ToList();
-            IEnumerable<Shift> shiftFridayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Friday).ToList();
-            IEnumerable<Shift> shiftSaturdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Saturday).ToList();
-            IEnumerable<Shift> shiftSundayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Sunday).ToList();
+            // ShiftRotaVM viewModel = new ShiftRotaVM();
+            //
+            // IEnumerable<Shift> shiftMondayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Monday).ToList();
+            // IEnumerable<Shift> shiftTeusdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Tuesday).ToList();
+            // IEnumerable<Shift> shiftWednesdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Wednesday).ToList();
+            // IEnumerable<Shift> shiftThursdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Thursday).ToList();
+            // IEnumerable<Shift> shiftFridayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Friday).ToList();
+            // IEnumerable<Shift> shiftSaturdayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Saturday).ToList();
+            // IEnumerable<Shift> shiftSundayList = db.Shifts.AsEnumerable().Where(x => x.ShiftDate.DayOfWeek == DayOfWeek.Sunday).ToList();
+            //
+            // viewModel.ShiftDatesMonday = shiftMondayList;
+            // viewModel.ShiftDatesTeusday = shiftTeusdayList;
+            // viewModel.ShiftDatesWednesday = shiftWednesdayList;
+            // viewModel.ShiftDatesThursday = shiftThursdayList;
+            // viewModel.ShiftDatesFriday = shiftFridayList;
+            // viewModel.ShiftDatesSaturday = shiftSaturdayList;
+            // viewModel.ShiftDatesSunday = shiftSundayList;
 
-            viewModel.ShiftDatesMonday = shiftMondayList;
-            viewModel.ShiftDatesTeusday = shiftTeusdayList;
-            viewModel.ShiftDatesWednesday = shiftWednesdayList;
-            viewModel.ShiftDatesThursday = shiftThursdayList;
-            viewModel.ShiftDatesFriday = shiftFridayList;
-            viewModel.ShiftDatesSaturday = shiftSaturdayList;
-            viewModel.ShiftDatesSunday = shiftSundayList;
+            return View(db.Files.ToList());
+        }
 
-            return View(viewModel);
+        public ActionResult Details()
+        {
+            return View();
         }
 
         [Authorize(Roles = "Admin, General Manager")]
@@ -70,7 +76,19 @@ namespace NHPL_HQ.Controllers
             foreach (HttpPostedFileBase file in files)
             {
                 string fileName = Path.GetFileName(file.FileName);
-                var filePath = Path.Combine(path + "\\" + fileName);
+
+                string rotaPractice = fileName;
+                int indexPractice = rotaPractice.IndexOf("-");
+                if (indexPractice > 0)
+                    rotaPractice = rotaPractice.Substring(0, indexPractice);
+                string inputTrimmedPractice = rotaPractice.Trim();
+
+                string rotaMonth = fileName;
+                string[] wordsSplit = rotaMonth.Split();
+                var wordsSplitMonth = wordsSplit[7];
+                var inputTrimmedMonth = wordsSplitMonth.Trim();
+
+                var filePath = Path.Combine(path + "\\" + inputTrimmedPractice + "\\" + inputTrimmedMonth + "\\" + fileName);
                 file.SaveAs(filePath);
                 if (!System.IO.File.Exists(filePath))
                 {
@@ -81,21 +99,15 @@ namespace NHPL_HQ.Controllers
                     ViewBag.SuccessMessage += string.Format("{0} Uploaded!<br />", fileName);
                 }
 
-                string input = fileName;
-                int index = input.IndexOf("-");
-                if (index > 0)
-                    input = input.Substring(0, index);
-
                 var rotaFile = new Models.File()
                 {
                     FileName = fileName,
                     FileType = FileType.Document,
                     ContentType = file.ContentType,
-                    PracticeName = input
+                    PracticeName = rotaPractice
                 };
 
                 //var practiceDbList = db.Practices.AsEnumerable();
-
                 using (var reader = new System.IO.BinaryReader(file.InputStream))
                 {
                     rotaFile.Content = reader.ReadBytes(file.ContentLength);
@@ -103,11 +115,10 @@ namespace NHPL_HQ.Controllers
                 db.Files.Add(rotaFile);
                 db.SaveChanges();
 
-
                 _Application applicationclass = new Application();
                 Document activeDocument = applicationclass.Documents.Open(filePath);
 
-                ////applicationclass.Visible = false;
+                //applicationclass.Visible = false;
                 //
                 //int tablesCount = activeDocument.Tables.Count;
                 //var rotaNameText = "";
@@ -169,7 +180,7 @@ namespace NHPL_HQ.Controllers
 
                 Document document = applicationclass.ActiveDocument;
                 document.Close();
-                System.IO.File.Delete(filePath.ToString());
+                //System.IO.File.Delete(filePath.ToString());
                 return View();
             }
             return View();

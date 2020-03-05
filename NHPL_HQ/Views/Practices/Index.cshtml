@@ -1,39 +1,194 @@
-﻿@model IEnumerable<NHPL_HQ.Models.Practice>
+﻿@using NHPL_HQ.Models
+@model IEnumerable<AccordionModel>
 
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @*<div class="templatemo-content-container">
+            <div class="templatemo-flex-row flex-content-row">
+                <div id="dvAccordian" style="width:400px">
+                    @foreach (AccordionModel item in Model)
+                    {
+                        <h3>@item.Title</h3>
+                        <div>
+                            <p>@item.Content</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+                <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+                <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+                <link href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/start/jquery-ui.css"
+                      rel="stylesheet" type="text/css" />
+                <script type="text/javascript">
+                    $(function () {
+                        $("#dvAccordian").accordion();
+                    });
+                </script>*@
+
+
+    <div class="col-lg-12">
+        <div class="container">
+            <div class="row">
+                <section class="panel panel-default">
+                    <div class="panel-body">
+
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h1>Animal Files</h1>
+                            </div>
+
+                            <div class="col-lg-9">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </span>
+                                    <input type="search" id="accordion_search_bar" class="form-control" placeholder="Typing in a word like 'legless' will make snake the only accordion row available.">
+                                </div>
+                                <!-- /input-group -->
+                            </div>
+                            <!-- /.col-lg-6 -->
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-xs-12">
+
+
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default" id="collapseOne_container">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a role="button"
+                                                   data-toggle="collapse"
+                                                   data-parent="#accordion"
+                                                   href="#collapseOne"
+                                                   aria-expanded="true"
+                                                   aria-controls="collapseOne">
+                                                    <i class="fa fa-paw fa-fw" aria-hidden="true"></i>Lion
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <p>
+                                                    The lion (Panthera leo) is one of the big cats in the genus Panthera and a member of the family Felidae. The commonly used term African lion collectively denotes the several subspecies in Africa. With some males exceeding 250 kg
+                                                    (550 lb) in weight, it is the second-largest living cat after the tiger. Wild lions currently exist in sub-Saharan Africa and in India (where an endangered remnant population resides in Gir Forest National Park). In ancient historic
+                                                    times, their range was in most of Africa, including North Africa, and across Eurasia from Greece and southeastern Europe to India. In the late Pleistocene, about 10,000 years ago, the lion was the most widespread large land mammal
+                                                    after humans: Panthera leo spelaea lived in northern and western Europe and Panthera leo atrox lived in the Americas from the Yukon to Peru.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default" id="collapseTwo_Container">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed"
+                                                   role="button"
+                                                   data-toggle="collapse"
+                                                   data-parent="#accordion"
+                                                   href="#collapseTwo"
+                                                   aria-expanded="false"
+                                                   aria-controls="collapseTwo">
+                                                    <i class="fa fa-paw fa-fw" aria-hidden="true"></i>Snake
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
+                                                <p>
+                                                    Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes that can be distinguished from legless lizards by their lack of eyelids and external ears. Like all squamates, snakes are ectothermic, amniote vertebrates
+                                                    covered in overlapping scales. Many species of snakes have skulls with several more joints than their lizard ancestors, enabling them to swallow prey much larger than their heads with their highly mobile jaws. To accommodate their
+                                                    narrow bodies, snakes' paired organs (such as kidneys) appear one in front of the other instead of side by side, and most have only one functional lung. Some species retain a pelvic girdle with a pair of vestigial claws on either
+                                                    side of the cloaca.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default" id="collapseThree_Container">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed"
+                                                   role="button"
+                                                   data-toggle="collapse"
+                                                   data-parent="#accordion"
+                                                   href="#collapseThree"
+                                                   aria-expanded="false"
+                                                   aria-controls="collapseThree">
+                                                    <i class="fa fa-paw fa-fw" aria-hidden="true"></i>Meerkat
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="panel-body">
+                                                <p>
+                                                    The meerkat or suricate (Suricata suricatta) is a small carnivoran belonging to the mongoose family (Herpestidae). It is the only member of the genus Suricata. Meerkats live in all parts of the Kalahari Desert in Botswana, in much
+                                                    of the Namib Desert in Namibia and southwestern Angola, and in South Africa. A group of meerkats is called a "mob", "gang" or "clan". A meerkat clan often contains about 20 meerkats, but some super-families have 50 or more members.
+                                                    In captivity, meerkats have an average life span of 12–14 years, and about half this in the wild.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Information is provided by Wikipedia</p>
+                            </div>
+
+
+                        </div>
+                        <!-- Row -->
+                    </div>
+                    <!-- Col -->
+                    </section>
+            </div>
+            <!-- Container -->
+            </div>
+        </div>
+
+
+</body>
+</html>
+<script>
+    $('.collapse').not(':first').collapse(); // Collapse all but the first row on the page.
+
+// This section makes the search work.
+(function() {
+  var searchTerm, panelContainerId;
+  $('#accordion_search_bar').on('change keyup', function() {
+    searchTerm = $(this).val();
+    $('#accordion > .panel').each(function() {
+      panelContainerId = '#' + $(this).attr('id');
+
+      // Makes search to be case insesitive 
+      $.extend($.expr[':'], {
+        'contains': function(elem, i, match, array) {
+          return (elem.textContent || elem.innerText || '').toLowerCase()
+            .indexOf((match[3] || "").toLowerCase()) >= 0;
+        }
+      });
+
+      // END Makes search to be case insesitive
+
+      // Show and Hide Triggers
+      $(panelContainerId + ':not(:contains(' + searchTerm + '))').hide(); //Hide the rows that done contain the search query.
+      $(panelContainerId + ':contains(' + searchTerm + ')').show(); //Show the rows that do!
+
+    });
+  });
+}());
+// End Show and Hide Triggers
+
+// END This section makes the search work.
+    </script>

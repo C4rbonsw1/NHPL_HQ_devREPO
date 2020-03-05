@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.10.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.10.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
@@ -254,25 +259,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002271318445_rota Image Post.cs" />
-    <Compile Include="Migrations\202002271318445_rota Image Post.Designer.cs">
-      <DependentUpon>202002271318445_rota Image Post.cs</DependentUpon>
+    <Compile Include="Migrations\202003031139490_Update Db error.cs" />
+    <Compile Include="Migrations\202003031139490_Update Db error.Designer.cs">
+      <DependentUpon>202003031139490_Update Db error.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002271431303_rota Image Post2.cs" />
-    <Compile Include="Migrations\202002271431303_rota Image Post2.Designer.cs">
-      <DependentUpon>202002271431303_rota Image Post2.cs</DependentUpon>
+    <Compile Include="Migrations\202003041133530_Add FK File and Practice in RotaModel.cs" />
+    <Compile Include="Migrations\202003041133530_Add FK File and Practice in RotaModel.Designer.cs">
+      <DependentUpon>202003041133530_Add FK File and Practice in RotaModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002281107275_rota Image Post3.cs" />
-    <Compile Include="Migrations\202002281107275_rota Image Post3.Designer.cs">
-      <DependentUpon>202002281107275_rota Image Post3.cs</DependentUpon>
+    <Compile Include="Migrations\202003051531326_months Add.cs" />
+    <Compile Include="Migrations\202003051531326_months Add.Designer.cs">
+      <DependentUpon>202003051531326_months Add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Accordian.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Months.cs" />
     <Compile Include="Models\Practice.cs" />
     <Compile Include="Models\PracticeEnums.cs" />
     <Compile Include="Models\Rota.cs" />
@@ -294,6 +301,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\bicycle.jpg" />
     <Content Include="Content\images\checkbox-radio-sheet.png" />
+    <Content Include="Content\images\DA2018-Finalist-Logo2-180x180.png" />
     <Content Include="Content\images\me-cropped-thin.jpg" />
     <Content Include="Content\images\me-cropped.jpg" />
     <Content Include="Content\images\person.jpg" />
@@ -333,6 +341,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ReleaseNotes.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
@@ -343,6 +353,108 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap\_variables.scss" />
+    <Content Include="Content\bootstrap\_utilities.scss" />
+    <Content Include="Content\bootstrap\_type.scss" />
+    <Content Include="Content\bootstrap\_transitions.scss" />
+    <Content Include="Content\bootstrap\_tooltip.scss" />
+    <Content Include="Content\bootstrap\_toasts.scss" />
+    <Content Include="Content\bootstrap\_tables.scss" />
+    <Content Include="Content\bootstrap\_spinners.scss" />
+    <Content Include="Content\bootstrap\_root.scss" />
+    <Content Include="Content\bootstrap\_reboot.scss" />
+    <Content Include="Content\bootstrap\_progress.scss" />
+    <Content Include="Content\bootstrap\_print.scss" />
+    <Content Include="Content\bootstrap\_popover.scss" />
+    <Content Include="Content\bootstrap\_pagination.scss" />
+    <Content Include="Content\bootstrap\_navbar.scss" />
+    <Content Include="Content\bootstrap\_nav.scss" />
+    <Content Include="Content\bootstrap\_modal.scss" />
+    <Content Include="Content\bootstrap\_mixins.scss" />
+    <Content Include="Content\bootstrap\_media.scss" />
+    <Content Include="Content\bootstrap\_list-group.scss" />
+    <Content Include="Content\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\bootstrap\_input-group.scss" />
+    <Content Include="Content\bootstrap\_images.scss" />
+    <Content Include="Content\bootstrap\_grid.scss" />
+    <Content Include="Content\bootstrap\_functions.scss" />
+    <Content Include="Content\bootstrap\_forms.scss" />
+    <Content Include="Content\bootstrap\_dropdown.scss" />
+    <Content Include="Content\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\bootstrap\_code.scss" />
+    <Content Include="Content\bootstrap\_close.scss" />
+    <Content Include="Content\bootstrap\_carousel.scss" />
+    <Content Include="Content\bootstrap\_card.scss" />
+    <Content Include="Content\bootstrap\_buttons.scss" />
+    <Content Include="Content\bootstrap\_button-group.scss" />
+    <Content Include="Content\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\bootstrap\_badge.scss" />
+    <Content Include="Content\bootstrap\_alert.scss" />
+    <Content Include="Content\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Content\bootstrap\utilities\_visibility.scss" />
+    <Content Include="Content\bootstrap\utilities\_text.scss" />
+    <Content Include="Content\bootstrap\utilities\_stretched-link.scss" />
+    <Content Include="Content\bootstrap\utilities\_spacing.scss" />
+    <Content Include="Content\bootstrap\utilities\_sizing.scss" />
+    <Content Include="Content\bootstrap\utilities\_shadows.scss" />
+    <Content Include="Content\bootstrap\utilities\_screenreaders.scss" />
+    <Content Include="Content\bootstrap\utilities\_position.scss" />
+    <Content Include="Content\bootstrap\utilities\_overflow.scss" />
+    <Content Include="Content\bootstrap\utilities\_float.scss" />
+    <Content Include="Content\bootstrap\utilities\_flex.scss" />
+    <Content Include="Content\bootstrap\utilities\_embed.scss" />
+    <Content Include="Content\bootstrap\utilities\_display.scss" />
+    <Content Include="Content\bootstrap\utilities\_clearfix.scss" />
+    <Content Include="Content\bootstrap\utilities\_borders.scss" />
+    <Content Include="Content\bootstrap\utilities\_background.scss" />
+    <Content Include="Content\bootstrap\utilities\_align.scss" />
+    <Content Include="Content\bootstrap\mixins\_visibility.scss" />
+    <Content Include="Content\bootstrap\mixins\_transition.scss" />
+    <Content Include="Content\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Content\bootstrap\mixins\_text-hide.scss" />
+    <Content Include="Content\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Content\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Content\bootstrap\mixins\_size.scss" />
+    <Content Include="Content\bootstrap\mixins\_screen-reader.scss" />
+    <Content Include="Content\bootstrap\mixins\_resize.scss" />
+    <Content Include="Content\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Content\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Content\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Content\bootstrap\mixins\_lists.scss" />
+    <Content Include="Content\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Content\bootstrap\mixins\_image.scss" />
+    <Content Include="Content\bootstrap\mixins\_hover.scss" />
+    <Content Include="Content\bootstrap\mixins\_grid.scss" />
+    <Content Include="Content\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Content\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Content\bootstrap\mixins\_forms.scss" />
+    <Content Include="Content\bootstrap\mixins\_float.scss" />
+    <Content Include="Content\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Content\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Content\bootstrap\mixins\_caret.scss" />
+    <Content Include="Content\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Content\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Content\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Content\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Content\bootstrap\mixins\_badge.scss" />
+    <Content Include="Content\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Content\bootstrap\mixins\_alert.scss" />
+    <Content Include="Content\bootstrap\bootstrap.scss" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\bootstrap\bootstrap-grid.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -354,8 +466,79 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -407,18 +590,214 @@
     <Content Include="Views\Practices\Delete.cshtml" />
     <Content Include="Views\Practices\Details.cshtml" />
     <Content Include="Views\Practices\Edit.cshtml" />
-    <Content Include="Views\Practices\Index.cshtml" />
     <Content Include="Views\Home\Staff.cshtml" />
+    <Content Include="Views\Practices\Index.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\AbbeydaleRoad\" />
-    <Folder Include="Uploads\Anstey\" />
-    <Folder Include="Uploads\ClayCross\" />
-    <Folder Include="Uploads\Dalton\" />
-    <Folder Include="Uploads\NormantonRoad\" />
+    <Folder Include="Uploads\AbbeydaleRoad\April\" />
+    <Folder Include="Uploads\AbbeydaleRoad\August\" />
+    <Folder Include="Uploads\AbbeydaleRoad\December\" />
+    <Folder Include="Uploads\AbbeydaleRoad\February\" />
+    <Folder Include="Uploads\AbbeydaleRoad\January\" />
+    <Folder Include="Uploads\AbbeydaleRoad\July\" />
+    <Folder Include="Uploads\AbbeydaleRoad\June\" />
+    <Folder Include="Uploads\AbbeydaleRoad\March\" />
+    <Folder Include="Uploads\AbbeydaleRoad\May\" />
+    <Folder Include="Uploads\AbbeydaleRoad\November\" />
+    <Folder Include="Uploads\AbbeydaleRoad\October\" />
+    <Folder Include="Uploads\AbbeydaleRoad\September\" />
+    <Folder Include="Uploads\Anstey\April\" />
+    <Folder Include="Uploads\Anstey\August\" />
+    <Folder Include="Uploads\Anstey\December\" />
+    <Folder Include="Uploads\Anstey\February\" />
+    <Folder Include="Uploads\Anstey\January\" />
+    <Folder Include="Uploads\Anstey\July\" />
+    <Folder Include="Uploads\Anstey\June\" />
+    <Folder Include="Uploads\Anstey\March\" />
+    <Folder Include="Uploads\Anstey\May\" />
+    <Folder Include="Uploads\Anstey\November\" />
+    <Folder Include="Uploads\Anstey\October\" />
+    <Folder Include="Uploads\Anstey\September\" />
+    <Folder Include="Uploads\ClayCross\April\" />
+    <Folder Include="Uploads\ClayCross\August\" />
+    <Folder Include="Uploads\ClayCross\December\" />
+    <Folder Include="Uploads\ClayCross\February\" />
+    <Folder Include="Uploads\ClayCross\January\" />
+    <Folder Include="Uploads\ClayCross\July\" />
+    <Folder Include="Uploads\ClayCross\June\" />
+    <Folder Include="Uploads\ClayCross\March\" />
+    <Folder Include="Uploads\ClayCross\May\" />
+    <Folder Include="Uploads\ClayCross\November\" />
+    <Folder Include="Uploads\ClayCross\October\" />
+    <Folder Include="Uploads\ClayCross\September\" />
+    <Folder Include="Uploads\Dalton\April\" />
+    <Folder Include="Uploads\Dalton\August\" />
+    <Folder Include="Uploads\Dalton\December\" />
+    <Folder Include="Uploads\Dalton\February\" />
+    <Folder Include="Uploads\Dalton\January\" />
+    <Folder Include="Uploads\Dalton\July\" />
+    <Folder Include="Uploads\Dalton\June\" />
+    <Folder Include="Uploads\Dalton\March\" />
+    <Folder Include="Uploads\Dalton\May\" />
+    <Folder Include="Uploads\Dalton\November\" />
+    <Folder Include="Uploads\Dalton\October\" />
+    <Folder Include="Uploads\Dalton\September\" />
+    <Folder Include="Uploads\Derby\April\" />
+    <Folder Include="Uploads\Derby\August\" />
+    <Folder Include="Uploads\Derby\December\" />
+    <Folder Include="Uploads\Derby\February\" />
+    <Folder Include="Uploads\Derby\January\" />
+    <Folder Include="Uploads\Derby\July\" />
+    <Folder Include="Uploads\Derby\June\" />
+    <Folder Include="Uploads\Derby\March\" />
+    <Folder Include="Uploads\Derby\May\" />
+    <Folder Include="Uploads\Derby\November\" />
+    <Folder Include="Uploads\Derby\October\" />
+    <Folder Include="Uploads\Derby\September\" />
+    <Folder Include="Uploads\Hillsborough\April\" />
+    <Folder Include="Uploads\Hillsborough\August\" />
+    <Folder Include="Uploads\Hillsborough\December\" />
+    <Folder Include="Uploads\Hillsborough\February\" />
+    <Folder Include="Uploads\Hillsborough\January\" />
+    <Folder Include="Uploads\Hillsborough\July\" />
+    <Folder Include="Uploads\Hillsborough\June\" />
+    <Folder Include="Uploads\Hillsborough\March\" />
+    <Folder Include="Uploads\Hillsborough\May\" />
+    <Folder Include="Uploads\Hillsborough\November\" />
+    <Folder Include="Uploads\Hillsborough\October\" />
+    <Folder Include="Uploads\Hillsborough\September\" />
+    <Folder Include="Uploads\Hoyland\April\" />
+    <Folder Include="Uploads\Hoyland\August\" />
+    <Folder Include="Uploads\Hoyland\December\" />
+    <Folder Include="Uploads\Hoyland\February\" />
+    <Folder Include="Uploads\Hoyland\January\" />
+    <Folder Include="Uploads\Hoyland\July\" />
+    <Folder Include="Uploads\Hoyland\June\" />
+    <Folder Include="Uploads\Hoyland\March\" />
+    <Folder Include="Uploads\Hoyland\May\" />
+    <Folder Include="Uploads\Hoyland\November\" />
+    <Folder Include="Uploads\Hoyland\October\" />
+    <Folder Include="Uploads\Hoyland\September\" />
+    <Folder Include="Uploads\Hucknall\April\" />
+    <Folder Include="Uploads\Hucknall\August\" />
+    <Folder Include="Uploads\Hucknall\December\" />
+    <Folder Include="Uploads\Hucknall\February\" />
+    <Folder Include="Uploads\Hucknall\January\" />
+    <Folder Include="Uploads\Hucknall\July\" />
+    <Folder Include="Uploads\Hucknall\June\" />
+    <Folder Include="Uploads\Hucknall\March\" />
+    <Folder Include="Uploads\Hucknall\May\" />
+    <Folder Include="Uploads\Hucknall\November\" />
+    <Folder Include="Uploads\Hucknall\October\" />
+    <Folder Include="Uploads\Hucknall\September\" />
+    <Folder Include="Uploads\ManorPark\April\" />
+    <Folder Include="Uploads\ManorPark\August\" />
+    <Folder Include="Uploads\ManorPark\December\" />
+    <Folder Include="Uploads\ManorPark\February\" />
+    <Folder Include="Uploads\ManorPark\January\" />
+    <Folder Include="Uploads\ManorPark\July\" />
+    <Folder Include="Uploads\ManorPark\June\" />
+    <Folder Include="Uploads\ManorPark\March\" />
+    <Folder Include="Uploads\ManorPark\May\" />
+    <Folder Include="Uploads\ManorPark\November\" />
+    <Folder Include="Uploads\ManorPark\October\" />
+    <Folder Include="Uploads\ManorPark\September\" />
+    <Folder Include="Uploads\Mansfield\April\" />
+    <Folder Include="Uploads\Mansfield\August\" />
+    <Folder Include="Uploads\Mansfield\December\" />
+    <Folder Include="Uploads\Mansfield\February\" />
+    <Folder Include="Uploads\Mansfield\January\" />
+    <Folder Include="Uploads\Mansfield\July\" />
+    <Folder Include="Uploads\Mansfield\June\" />
+    <Folder Include="Uploads\Mansfield\March\" />
+    <Folder Include="Uploads\Mansfield\May\" />
+    <Folder Include="Uploads\Mansfield\November\" />
+    <Folder Include="Uploads\Mansfield\October\" />
+    <Folder Include="Uploads\Mansfield\September\" />
+    <Folder Include="Uploads\SevenDental\April\" />
+    <Folder Include="Uploads\SevenDental\August\" />
+    <Folder Include="Uploads\SevenDental\December\" />
+    <Folder Include="Uploads\SevenDental\February\" />
+    <Folder Include="Uploads\SevenDental\January\" />
+    <Folder Include="Uploads\SevenDental\July\" />
+    <Folder Include="Uploads\SevenDental\June\" />
+    <Folder Include="Uploads\SevenDental\March\" />
+    <Folder Include="Uploads\SevenDental\May\" />
+    <Folder Include="Uploads\SevenDental\November\" />
+    <Folder Include="Uploads\SevenDental\October\" />
+    <Folder Include="Uploads\SevenDental\September\" />
+    <Folder Include="Uploads\Sileby\April\" />
+    <Folder Include="Uploads\Sileby\August\" />
+    <Folder Include="Uploads\Sileby\December\" />
+    <Folder Include="Uploads\Sileby\February\" />
+    <Folder Include="Uploads\Sileby\January\" />
+    <Folder Include="Uploads\Sileby\July\" />
+    <Folder Include="Uploads\Sileby\June\" />
+    <Folder Include="Uploads\Sileby\March\" />
+    <Folder Include="Uploads\Sileby\May\" />
+    <Folder Include="Uploads\Sileby\November\" />
+    <Folder Include="Uploads\Sileby\October\" />
+    <Folder Include="Uploads\Sileby\September\" />
+    <Folder Include="Uploads\Sneinton\April\" />
+    <Folder Include="Uploads\Sneinton\August\" />
+    <Folder Include="Uploads\Sneinton\December\" />
+    <Folder Include="Uploads\Sneinton\February\" />
+    <Folder Include="Uploads\Sneinton\January\" />
+    <Folder Include="Uploads\Sneinton\July\" />
+    <Folder Include="Uploads\Sneinton\June\" />
+    <Folder Include="Uploads\Sneinton\March\" />
+    <Folder Include="Uploads\Sneinton\May\" />
+    <Folder Include="Uploads\Sneinton\November\" />
+    <Folder Include="Uploads\Sneinton\October\" />
+    <Folder Include="Uploads\Sneinton\September\" />
+    <Folder Include="Uploads\Somercotes\April\" />
+    <Folder Include="Uploads\Somercotes\August\" />
+    <Folder Include="Uploads\Somercotes\December\" />
+    <Folder Include="Uploads\Somercotes\February\" />
+    <Folder Include="Uploads\Somercotes\January\" />
+    <Folder Include="Uploads\Somercotes\July\" />
+    <Folder Include="Uploads\Somercotes\June\" />
+    <Folder Include="Uploads\Somercotes\March\" />
+    <Folder Include="Uploads\Somercotes\May\" />
+    <Folder Include="Uploads\Somercotes\November\" />
+    <Folder Include="Uploads\Somercotes\October\" />
+    <Folder Include="Uploads\Somercotes\September\" />
+    <Folder Include="Uploads\Tollgate\April\" />
+    <Folder Include="Uploads\Tollgate\August\" />
+    <Folder Include="Uploads\Tollgate\December\" />
+    <Folder Include="Uploads\Tollgate\February\" />
+    <Folder Include="Uploads\Tollgate\January\" />
+    <Folder Include="Uploads\Tollgate\July\" />
+    <Folder Include="Uploads\Tollgate\June\" />
+    <Folder Include="Uploads\Tollgate\March\" />
+    <Folder Include="Uploads\Tollgate\May\" />
+    <Folder Include="Uploads\Tollgate\November\" />
+    <Folder Include="Uploads\Tollgate\October\" />
+    <Folder Include="Uploads\Tollgate\September\" />
+    <Folder Include="Uploads\Wakefield\April\" />
+    <Folder Include="Uploads\Wakefield\August\" />
+    <Folder Include="Uploads\Wakefield\December\" />
+    <Folder Include="Uploads\Wakefield\February\" />
+    <Folder Include="Uploads\Wakefield\January\" />
+    <Folder Include="Uploads\Wakefield\July\" />
+    <Folder Include="Uploads\Wakefield\June\" />
+    <Folder Include="Uploads\Wakefield\March\" />
+    <Folder Include="Uploads\Wakefield\May\" />
+    <Folder Include="Uploads\Wakefield\November\" />
+    <Folder Include="Uploads\Wakefield\October\" />
+    <Folder Include="Uploads\Wakefield\September\" />
     <Folder Include="Views\EmployeeRota\" />
-    <Folder Include="Views\Practice\" />
     <Folder Include="Views\Supervisor\" />
   </ItemGroup>
   <ItemGroup>
@@ -431,21 +810,28 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002271318445_rota Image Post.resx">
-      <DependentUpon>202002271318445_rota Image Post.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003031139490_Update Db error.resx">
+      <DependentUpon>202003031139490_Update Db error.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002271431303_rota Image Post2.resx">
-      <DependentUpon>202002271431303_rota Image Post2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003041133530_Add FK File and Practice in RotaModel.resx">
+      <DependentUpon>202003041133530_Add FK File and Practice in RotaModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002281107275_rota Image Post3.resx">
-      <DependentUpon>202002281107275_rota Image Post3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003051531326_months Add.resx">
+      <DependentUpon>202003051531326_months Add.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

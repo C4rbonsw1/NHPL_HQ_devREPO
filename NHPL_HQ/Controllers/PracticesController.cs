@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using IdentitySample.Models;
 using NHPL_HQ.Models;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace NHPL_HQ.Controllers
 {
@@ -19,7 +21,32 @@ namespace NHPL_HQ.Controllers
         [Authorize(Roles = "Admin, General Manager")]
         public ActionResult Index()
         {
-            return View(db.Practices.ToList());
+            List<AccordionModel> items = new List<AccordionModel>();
+            string constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandText = "select Title, Content from AccordionContent";
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            items.Add(new AccordionModel
+                            {
+                                Title = sdr["Title"].ToString(),
+                                Content = sdr["Content"].ToString()
+                            });
+                        }
+                    }
+
+                    con.Close();
+                }
+            }
+
+            return View(items);
         }
 
         // GET: Practices/Details/5
