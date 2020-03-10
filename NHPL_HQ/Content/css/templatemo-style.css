@@ -19,8 +19,12 @@ TABLE OF CONTENT
 /* 1. Universal Styles
 ----------------------------------------------*/
 * {	font-family: 'Open Sans', sans-serif; }
-body {	font-size: 13px; }
-body, .templatemo-left-nav { background: #1f2124; }
+body { background: #4a6a8a; font-size: 13px;
+}
+/*body, .templatemo-left-nav { background: #1f2124; }*/
+
+.templatemo-left-nav {background: #1f2124;}
+
 h1, h2, h3 { margin: 0; }
 h2 { font-size: 1.6em; }
 h3 {
@@ -111,7 +115,7 @@ footer { padding: 15px; }
 }
 .profile-photo-container { position: relative; }
 .profile-photo-overlay {
-	background-color: rgba(4, 152, 114, 0.35);
+	/*background-color: rgba(4, 152, 114, 0.35);*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -119,7 +123,7 @@ footer { padding: 15px; }
 	height: 100%;
 	transition: all 0.3s ease;
 }
-.profile-photo-overlay:hover { background-color: rgba(4, 152, 114, 0); }
+/*.profile-photo-overlay:hover { background-color: rgba(4, 152, 114, 0); }*/
 
 /* Search form */
 .templatemo-search-form {
@@ -238,10 +242,11 @@ footer { padding: 15px; }
 /* Content Widget */
 .templatemo-content-widget {
 	border-radius: 10px;
-	padding: 30px;	
+	padding: 30px;
 	position: relative;
-	margin: 10px;
- 	box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+	margin: 1%;
+	margin-right: 7%;
+	box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
 }
 .templatemo-content-widget.no-padding {	padding: 0; }
 .fa-times {
@@ -269,8 +274,7 @@ footer { padding: 15px; }
 .progress {	display: block; }
 .panel-default > .panel-heading {
 	background-color: #003087;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+	border-radius: 10px;
 	color: white;
 	padding: 15px;
 }

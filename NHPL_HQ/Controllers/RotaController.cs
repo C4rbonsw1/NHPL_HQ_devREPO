@@ -47,10 +47,14 @@ namespace NHPL_HQ.Controllers
             // viewModel.ShiftDatesSaturday = shiftSaturdayList;
             // viewModel.ShiftDatesSunday = shiftSundayList;
 
-            return View(db.Files.ToList());
+            return View();
         }
 
-        public ActionResult Details()
+        public ActionResult ManageRota()
+        {
+            return View(db.Files.Include(x => x.Practice).ToList());
+        }
+        public ActionResult ManageStaff()
         {
             return View();
         }
@@ -81,13 +85,25 @@ namespace NHPL_HQ.Controllers
                 int indexPractice = rotaPractice.IndexOf("-");
                 if (indexPractice > 0)
                     rotaPractice = rotaPractice.Substring(0, indexPractice);
+                if (rotaPractice.Contains("")) 
+                {
+                    int indexRotaPractice = rotaPractice.IndexOf(" ");
+                    rotaPractice = rotaPractice.Remove(indexRotaPractice, 1);
+                }
                 string inputTrimmedPractice = rotaPractice.Trim();
 
+                var wordsSplitMonth = "";
                 string rotaMonth = fileName;
                 string[] wordsSplit = rotaMonth.Split();
-                var wordsSplitMonth = wordsSplit[7];
+                if (wordsSplit.Count() == 9)
+                {
+                    wordsSplitMonth = wordsSplit[7];
+                }
+                else 
+                {
+                    wordsSplitMonth = wordsSplit[8];
+                }
                 var inputTrimmedMonth = wordsSplitMonth.Trim();
-
                 var filePath = Path.Combine(path + "\\" + inputTrimmedPractice + "\\" + inputTrimmedMonth + "\\" + fileName);
                 file.SaveAs(filePath);
                 if (!System.IO.File.Exists(filePath))
@@ -118,72 +134,78 @@ namespace NHPL_HQ.Controllers
                 _Application applicationclass = new Application();
                 Document activeDocument = applicationclass.Documents.Open(filePath);
 
-                //applicationclass.Visible = false;
-                //
-                //int tablesCount = activeDocument.Tables.Count;
-                //var rotaNameText = "";
-                //
-                //System.Data.DataSet dtSetResult = new System.Data.DataSet(); 
-                //foreach (Microsoft.Office.Interop.Word.Table tb in activeDocument.Tables)
-                //{
-                //    int rowscount = tb.Rows.Count;
-                //    int columnscount = tb.Columns.Count;
-                //    System.Data.DataTable dtResult = new System.Data.DataTable();
-                //   
-                //    if (tb.Rows.Count == 1 && tb.Columns.Count == 1)
-                //    {
-                //        var cell = tb.Cell(0, 0);
-                //        rotaNameText = cell.Range.Text;
-                //        //rotaNameText = shiftModel.Practice.Name;
-                //    }
-                //    else
-                //    {
-                //        for (int i = 0; i < rowscount; i++)
-                //        {
-                //            string text = "";
-                //            for (int j = 0; j < columnscount; j++)
-                //            {
-                //                if (i == 0 && j >= 1)
-                //                {
-                //                    var cell = tb.Cell(i, j);
-                //                    text = cell.Range.Text;
-                //                    shift.Location(text);
-                //                }
-                //                else if (i >= 1 && j == 0)
-                //                {
-                //                    var cell = tb.Cell(i, j);
-                //                    text = cell.Range.Text;
-                //                    db.Users.Attach(shift.Employee);
-                //                    var employeeInDb = db.Shifts.Include(x => x.Employee).SingleOrDefault(x => x.Id == shift.Id);
-                //                    if (employeeInDb != null)
-                //                    {
-                //                        db.Entry(employeeInDb).CurrentValues.SetValues(shift);
-                //                        employeeInDb.Employee = shift.Employee;
-                //                    }
-                //                }
-                //                else if(i >= 1 && j >= 1)
-                //                {
-                //                    var cell = tb.Cell(i, j);
-                //                    text = cell.Range.Text;
-                //                    shift.ShiftDate(text);
-                //                }
-                //                //rota.Name = text;
-                //                //var rotaNameInDb = db.Rotas.SingleOrDefault(i => i.Id == text.Length)
-                //                //Referencing the column in the new row by number, starting from 0.
-                //                //dataRow[i] = tb.Rows[i].ToString();
-                //            }
-                //
-                //            //dtResult.Rows.Add(dataRow);
-                //        }
-                //    }
-                //}
-
                 Document document = applicationclass.ActiveDocument;
                 document.Close();
                 //System.IO.File.Delete(filePath.ToString());
-                return View();
             }
             return View();
         }
     }
 }
+
+
+
+
+
+
+
+
+//applicationclass.Visible = false;
+//
+//int tablesCount = activeDocument.Tables.Count;
+//var rotaNameText = "";
+//
+//System.Data.DataSet dtSetResult = new System.Data.DataSet(); 
+//foreach (Microsoft.Office.Interop.Word.Table tb in activeDocument.Tables)
+//{
+//    int rowscount = tb.Rows.Count;
+//    int columnscount = tb.Columns.Count;
+//    System.Data.DataTable dtResult = new System.Data.DataTable();
+//   
+//    if (tb.Rows.Count == 1 && tb.Columns.Count == 1)
+//    {
+//        var cell = tb.Cell(0, 0);
+//        rotaNameText = cell.Range.Text;
+//        //rotaNameText = shiftModel.Practice.Name;
+//    }
+//    else
+//    {
+//        for (int i = 0; i < rowscount; i++)
+//        {
+//            string text = "";
+//            for (int j = 0; j < columnscount; j++)
+//            {
+//                if (i == 0 && j >= 1)
+//                {
+//                    var cell = tb.Cell(i, j);
+//                    text = cell.Range.Text;
+//                    shift.Location(text);
+//                }
+//                else if (i >= 1 && j == 0)
+//                {
+//                    var cell = tb.Cell(i, j);
+//                    text = cell.Range.Text;
+//                    db.Users.Attach(shift.Employee);
+//                    var employeeInDb = db.Shifts.Include(x => x.Employee).SingleOrDefault(x => x.Id == shift.Id);
+//                    if (employeeInDb != null)
+//                    {
+//                        db.Entry(employeeInDb).CurrentValues.SetValues(shift);
+//                        employeeInDb.Employee = shift.Employee;
+//                    }
+//                }
+//                else if(i >= 1 && j >= 1)
+//                {
+//                    var cell = tb.Cell(i, j);
+//                    text = cell.Range.Text;
+//                    shift.ShiftDate(text);
+//                }
+//                //rota.Name = text;
+//                //var rotaNameInDb = db.Rotas.SingleOrDefault(i => i.Id == text.Length)
+//                //Referencing the column in the new row by number, starting from 0.
+//                //dataRow[i] = tb.Rows[i].ToString();
+//            }
+//
+//            //dtResult.Rows.Add(dataRow);
+//        }
+//    }
+//}

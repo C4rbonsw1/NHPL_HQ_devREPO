@@ -271,6 +271,10 @@
     <Compile Include="Migrations\202003051531326_months Add.Designer.cs">
       <DependentUpon>202003051531326_months Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003090927212_remove months model.cs" />
+    <Compile Include="Migrations\202003090927212_remove months model.Designer.cs">
+      <DependentUpon>202003090927212_remove months model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accordian.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -279,7 +283,6 @@
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Months.cs" />
     <Compile Include="Models\Practice.cs" />
     <Compile Include="Models\PracticeEnums.cs" />
     <Compile Include="Models\Rota.cs" />
@@ -294,8 +297,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\customStyles.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\templatemo-style.css" />
     <Content Include="Content\data-visualization.html" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
@@ -304,10 +307,14 @@
     <Content Include="Content\images\DA2018-Finalist-Logo2-180x180.png" />
     <Content Include="Content\images\me-cropped-thin.jpg" />
     <Content Include="Content\images\me-cropped.jpg" />
+    <Content Include="Content\images\NWHC-Logo-trans-stacked.png" />
     <Content Include="Content\images\person.jpg" />
     <Content Include="Content\images\profile-photo.jpg" />
+    <Content Include="Content\images\ROTAss.jpg" />
     <Content Include="Content\images\sunset-big.jpg" />
     <Content Include="Content\images\sunset.jpg" />
+    <Content Include="Content\images\Upload-1-arrow.png" />
+    <Content Include="Content\images\Upload-2-hand.png" />
     <Content Include="Content\index.html" />
     <Content Include="Content\jqvmap\data\jquery.vmap.sampledata.js" />
     <Content Include="Content\jqvmap\jquery.vmap.js" />
@@ -602,12 +609,13 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Rota\ManageRota.cshtml" />
+    <Content Include="Uploads\AbbeydaleRoad\December\Abbeydale Road - Timetable Week Commencing Monday 8th December 2019.docx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\AbbeydaleRoad\April\" />
     <Folder Include="Uploads\AbbeydaleRoad\August\" />
-    <Folder Include="Uploads\AbbeydaleRoad\December\" />
     <Folder Include="Uploads\AbbeydaleRoad\February\" />
     <Folder Include="Uploads\AbbeydaleRoad\January\" />
     <Folder Include="Uploads\AbbeydaleRoad\July\" />
@@ -818,6 +826,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003051531326_months Add.resx">
       <DependentUpon>202003051531326_months Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003090927212_remove months model.resx">
+      <DependentUpon>202003090927212_remove months model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

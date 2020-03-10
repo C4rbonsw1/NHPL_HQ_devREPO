@@ -16,12 +16,34 @@ namespace IdentitySample.Controllers
             {
                 return Redirect("~/Account/Login");
             }
-            //else if (User.Identity.IsAuthenticated) 
-            //{
-            //    var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Id = model.Role.Id};
-            //    var userRole = dbContext.Roles.Where(x => x.Id == model.Role.Id).First();
-            //    return Redirect("~/Home/Staff");
-            //}
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Employee")) 
+            {
+                return Redirect("~/Home/Staff");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Dentist"))
+            {
+                return Redirect("~/Home/Staff");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Qualified Dental Nurse"))
+            {
+                return Redirect("~/Home/Staff");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Qualifying Dental Nurse"))
+            {
+                return Redirect("~/Home/Staff");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Receptionist"))
+            {
+                return Redirect("~/Home/Staff");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("Practice Manager"))
+            {
+                return Redirect("~/Rota/Upload");
+            }
+            else if (User.Identity.IsAuthenticated && User.IsInRole("General Manager"))
+            {
+                return Redirect("~/Rota/Upload");
+            }
             return View();
         }
 

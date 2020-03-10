@@ -4,360 +4,362 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@foreach (var item in Model)
-{
-    if (item.PracticeName.Contains("Hucknall"))
-    {
-        <dl class="dl-horizontal">
-            <dt>
-                Rota
-            </dt>
-            <dd>
-                @Html.DisplayFor(modelItem => item.Content)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.FileName)
-            </dt>
-        </dl>
-    }
-}*@
-
 
 <div class="templatemo-flex-row">
     <div class="templatemo-sidebar">
-        @*<div class="profile-photo-container">
-                <img src="~/Content/images/DA2018-Finalist-Logo2-180x180.png" alt="Profile Photo" class="img-responsive">
-                <div class="profile-photo-overlay"></div>
-            </div>*@
+
         <header class="templatemo-site-header">
-            <h1>Rota Management</h1>
+            <h1>ROTAs</h1>
         </header>
+
+        <div class="profile-photo-container">
+            <img src="~/Content/images/NWHC-Logo-trans-stacked.png" alt="Profile Photo" class="img-responsive">
+            <div class="profile-photo-overlay"></div>
+        </div>
 
         <!-- Search box -->
         @*<form class="templatemo-search-form" role="search">
-                <div class="input-group">
-                    <button type="submit" class="fa fa-search"></button>
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                </div>
-            </form>*@
+            <div class="input-group">
+                <button type="submit" class="fa fa-search"></button>
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            </div>
+        </form>*@
         <div class="mobile-menu-icon">
             <i class="fa fa-bars"></i>
         </div>
         <nav class="templatemo-left-nav">
             <ul>
-                <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-                <li><a href="data-visualization.html"><i class="fa fa-bar-chart fa-fw"></i>Charts</a></li>
-                <li><a href="data-visualization.html"><i class="fa fa-database fa-fw"></i>Data Visualization</a></li>
-                <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>Maps</a></li>
-                <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
-                <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>Preferences</a></li>
-                <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+                <li><a href="#" class="active">ROTAs</a></li>
+                <li><a href="data-visualization.html">Staff Management</a></li>
+                <li><a href="data-visualization.html">Rota Management</a></li>
+                <li><a href="maps.html">Manage Users</a></li>
+                <li><a href="manage-users.html">Update User Info</a></li>
+                <li><a href="preferences.html">Contact</a></li>
+                <li><a href="login.html">Sign Out</a></li>
             </ul>
         </nav>
     </div>
-    <div class="container-2">
-        <div class="row">
-            <div class="col-lg-12 col-xs-12">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                    <div class="panel panel-default" id="collapseOne_container">
-                        <div class="panel-heading" role="tab" id="headingOne">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseOne"
-                                   aria-expanded="false"
-                                   aria-controls="collapseOne">Abbeydale Road Family Dental Centre</a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseTwo"
-                                   aria-expanded="false"
-                                   aria-controls="collapseTwo">Anstey Family Dental Centre</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseThree"
-                                   aria-expanded="false"
-                                   aria-controls="collapseThree">Clay Cross Family Dental Centre</a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseFour"
-                                   aria-expanded="false"
-                                   aria-controls="collapseFour">Dalton Dental Care</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingFive">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseFive"
-                                   aria-expanded="false"
-                                   aria-controls="collapseFive">Derby Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingSix">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseSix"
-                                   aria-expanded="false"
-                                   aria-controls="collapseSix">Hillsbrough Family Dental Centre</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingSeven">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseSeven"
-                                   aria-expanded="false"
-                                   aria-controls="collapseSeven">Hoyland Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    @foreach (var item in Model)
-                    {
-                        if (item.PracticeName.Contains("Hucknall"))
-                        {
-                            <div class="panel panel-default" id="collapseTwo_container">
-                                <div class="panel-heading" role="tab" id="headingEight">
-                                    <h4 class="panel-title">
-                                        <a role="button"
-                                           data-toggle="collapse"
-                                           data-parent="#accordion"
-                                           href="#collapseEight"
-                                           aria-expanded="false"
-                                           aria-controls="collapseEight">Hucknall Family Dental</a>
-                                    </h4>
-                                </div>
-                                <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
-                                    <div class="panel-body">
-                                        <span style="float:left"><a></a></span>@Html.DisplayFor(modelItem => item.Content)<span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingNine">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseNine"
-                                   aria-expanded="false"
-                                   aria-controls="collapseNine">Manor Park Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingTen">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseTen"
-                                   aria-expanded="false"
-                                   aria-controls="collapseTen">Mansfield Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingEleven">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseEleven"
-                                   aria-expanded="false"
-                                   aria-controls="collapseEleven">Sileby Dental Practice</a>
-                            </h4>
-                        </div>
-                        <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingTwelve">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseTwelve"
-                                   aria-expanded="false"
-                                   aria-controls="collapseTwelve">Seven Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingThirteen">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseThirteen"
-                                   aria-expanded="false"
-                                   aria-controls="collapseThirteen">Sneinton Family Dental Centre</a>
-                            </h4>
-                        </div>
-                        <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingFourteen">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseFourteen"
-                                   aria-expanded="false"
-                                   aria-controls="collapseFourteen">Somer Cotes Dental Practice</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingFifteen">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseFifteen"
-                                   aria-expanded="false"
-                                   aria-controls="collapseFifteen">Tollgate Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifteen">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default" id="collapseTwo_container">
-                        <div class="panel-heading" role="tab" id="headingSixteen">
-                            <h4 class="panel-title">
-                                <a role="button"
-                                   data-toggle="collapse"
-                                   data-parent="#accordion"
-                                   href="#collapseSixteen"
-                                   aria-expanded="false"
-                                   aria-controls="collapseSixteen">Wakefield Family Dental</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSixteen">
-                            <div class="panel-body">
-                                <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>View Previous ROTAs</a></span><span style="float: right"><a>Upload Rota</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row-2">
+            <div class="templatemo-content-widget white-bg col-sm-5">
+                <h2 class="templatemo-inline-block">You Have 0 ROTA's to Upload</h2>
+            </div>
+            <div class="templatemo-content-widget white-bg col-sm-5">
+                <h2 class="templatemo-inline-block">You Have 0 Shift Requests</h2>
+            </div>
+            <div class="templatemo-content-widget white-bg col-sm-11">
+                <h2 class="templatemo-inline-block">You Have 0 Holiday Requests</h2>
             </div>
         </div>
+                @*<i class="fa fa-times"></i>
+            <h2 class="text-uppercase">Dictum</h2>
+            <h3 class="text-uppercase">Sedvel Erat Non</h3><hr>
+            <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+            </div>*@
+         <div class="row-2">
+             <div class="col-lg-12 col-xs-12">
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                      <div class="panel panel-default" id="collapseOne_container">
+                          <div class="panel-heading" role="tab" id="headingOne">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseOne"
+                                     aria-expanded="false"
+                                     aria-controls="collapseOne">Abbeydale Road Family Dental Centre</a>
+                              </h4>
+                          </div>
+                          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                  <span style="float:left"><a href="~/Rota/UploadRota"><img src="~/Content/images/ROTAss.jpg" class="img-accord-size" alt="Profile Photo" class="img-responsive"></a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingTwo">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseTwo"
+                                     aria-expanded="false"
+                                     aria-controls="collapseTwo">Anstey Family Dental Centre</a>
+                              </h4>
+                          </div>
+                          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseThree"
+                                     aria-expanded="false"
+                                     aria-controls="collapseThree">Clay Cross Family Dental Centre</a>
+                              </h4>
+                          </div>
+                          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingFour">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseFour"
+                                     aria-expanded="false"
+                                     aria-controls="collapseFour">Dalton Dental Care</a>
+                              </h4>
+                          </div>
+                          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:25%"><a>Upload ROTAs</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingFive">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseFive"
+                                     aria-expanded="false"
+                                     aria-controls="collapseFive">Derby Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingSix">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseSix"
+                                     aria-expanded="false"
+                                     aria-controls="collapseSix">Hillsbrough Family Dental Centre</a>
+                              </h4>
+                          </div>
+                          <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingSeven">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseSeven"
+                                     aria-expanded="false"
+                                     aria-controls="collapseSeven">Hoyland Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingEight">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseEight"
+                                     aria-expanded="false"
+                                     aria-controls="collapseEight">Huckall Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingNine">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseNine"
+                                     aria-expanded="false"
+                                     aria-controls="collapseNine">Manor Park Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingTen">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseTen"
+                                     aria-expanded="false"
+                                     aria-controls="collapseTen">Mansfield Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingEleven">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseEleven"
+                                     aria-expanded="false"
+                                     aria-controls="collapseEleven">Sileby Dental Practice</a>
+                              </h4>
+                          </div>
+                          <div id="collapseEleven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEleven">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingTwelve">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseTwelve"
+                                     aria-expanded="false"
+                                     aria-controls="collapseTwelve">Seven Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingThirteen">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseThirteen"
+                                     aria-expanded="false"
+                                     aria-controls="collapseThirteen">Sneinton Family Dental Centre</a>
+                              </h4>
+                          </div>
+                          <div id="collapseThirteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThirteen">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingFourteen">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseFourteen"
+                                     aria-expanded="false"
+                                     aria-controls="collapseFourteen">Somer Cotes Dental Practice</a>
+                              </h4>
+                          </div>
+                          <div id="collapseFourteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFourteen">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingFifteen">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseFifteen"
+                                     aria-expanded="false"
+                                     aria-controls="collapseFifteen">Tollgate Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseFifteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFifteen">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="panel panel-default" id="collapseTwo_container">
+                          <div class="panel-heading" role="tab" id="headingSixteen">
+                              <h4 class="panel-title">
+                                  <a role="button"
+                                     data-toggle="collapse"
+                                     data-parent="#accordion"
+                                     href="#collapseSixteen"
+                                     aria-expanded="false"
+                                     aria-controls="collapseSixteen">Wakefield Family Dental</a>
+                              </h4>
+                          </div>
+                          <div id="collapseSixteen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSixteen">
+                              <div class="panel-body">
+                                  <span style="float:left"><a>View Current ROTA</a></span><span style="padding-left:15%"><a>View Previous ROTAs</a></span><span style="padding-left:15%"><a>Upload ROTA</a></span><span style="float: right"><a>You have updates</a></span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+         </div>
     </div>
-</div>
+    </div>
 
 @*<table class="table" style="color:white;">
         <tr>

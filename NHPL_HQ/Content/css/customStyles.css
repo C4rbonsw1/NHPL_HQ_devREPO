@@ -19,6 +19,14 @@
     }
 }
 
+.row-2 {
+}
+
+.img-accord-size {
+    width: 15vw;
+    height: 12vh;
+}
+
 .container {
     padding-right: 0px;
     padding-left: 0px;
@@ -27,13 +35,6 @@
     width: 98%;
 }
 
-.container-2 {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: 1%;
-    width: 98%;
-}
 
 .container-Header {
     padding-right: 40px; 
@@ -65,7 +66,11 @@ h3 {
 .nhs-bg {
     background-color: #003087;
 }
-
+.margin-lr-10 {
+    margin-left: 14px;
+    margin-right: 10px;
+    width: 32%;
+}
 
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 :before,
@@ -87,7 +92,6 @@ body {
 }
 
 body {
-    
 }
 
 .togglebox {
@@ -95,13 +99,11 @@ body {
      height: 400px;
      margin: 0 auto;
      background: #3c566f;
-    
 }
 
 input[type="radio"] {
      position: absolute;
      opacity: 0;
-    
 }
 
 label {
@@ -115,7 +117,6 @@ label {
      color: rgba(255, 255, 255, 0.5);
      background: #2e4155;
      cursor: pointer;
-    
 }
 
 label:hover {
@@ -124,7 +125,6 @@ label:hover {
 }
 
 label:after {
-     content: '\f078';
      top: 0px;
      right: 20px;
      font-family: fontawesome;
@@ -187,11 +187,11 @@ p {
 .panel {
     margin-top: 10px;
     background-color: rgba(255, 255, 255, .9) !important;
-    border: solid 2px #ccc;
+    /*border: solid 2px #ccc;*/
 }
 
 .panel-body {
-    background-color: #000;
+    background: #2e4155;
 }
 
 .panel-heading {

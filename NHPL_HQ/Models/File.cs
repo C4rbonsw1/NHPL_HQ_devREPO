@@ -16,8 +16,6 @@ namespace NHPL_HQ.Models
         public string ContentType { get; set; }
         public byte[] Content { get; set; }
         public FileType FileType { get; set; }
-
-        public Months Months { get; set; }
         public string PracticeName { get; set; }
         //public DateTime RotaDate { get; set; }
         //public DateTime UploadTimeStamp { get; set; }
