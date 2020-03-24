@@ -1,6 +1,14 @@
 ﻿body {
 }
 
+.logo-position {
+    float: left;
+    height: 5vh;
+    /* padding: 15px 15px; */
+    font-size: 18px;
+    line-height: 20px;
+}
+
 @media (min-width: 768px) {
     .container {
         width: 100%;
@@ -32,9 +40,8 @@
     padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
-    width: 98%;
+    width: 100%;
 }
-
 
 .container-Header {
     padding-right: 40px; 
@@ -49,13 +56,14 @@
 }
 
 body, .templatemo-left-nav {
-    background: #003087;
+    background: #18191b;
 }
 
 .templatemo-top-nav-container {
-    background-color: #003087;
+    background-color: white;
     padding: 27.5px 50px;
     box-shadow: 0px 0px 2px 2px rgba(161, 159, 159, 0.18);
+    height: 8.4vh;
 }
 
 h3 {
@@ -94,11 +102,15 @@ body {
 body {
 }
 
-.togglebox {
-     width: 300px;
-     height: 400px;
-     margin: 0 auto;
-     background: #3c566f;
+no-padding-left {
+    padding-left: 0px;
+}
+
+togglebox {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    background: #3c566f;
 }
 
 input[type="radio"] {
@@ -109,14 +121,15 @@ input[type="radio"] {
 label {
      position: relative;
      display: block;
-     height: 50px;
-     line-height: 50px;
+     height: 35px;
+     line-height: 35px;
      padding: 0 20px;
      font-size: 14px;
      font-weight: bold;
      color: rgba(255, 255, 255, 0.5);
      background: #2e4155;
      cursor: pointer;
+     text-align:center;
 }
 
 label:hover {
@@ -165,7 +178,9 @@ p {
      color: rgba(255, 255, 255, 0.8);
     
 }
-
+.width100 {
+    width: 100%;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Anton');
 

@@ -48,7 +48,7 @@ namespace IdentitySample.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin, Employee")]
+        [Authorize(Roles = "Admin, Employee, Dentist, Qualified Dental Nurse, Qualifying Dental Nurse, Receptionist, Practice Manager, General Manager")]
         public ActionResult Staff()
         {
             return View();

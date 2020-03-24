@@ -109,7 +109,6 @@ namespace IdentitySample.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
@@ -356,7 +355,6 @@ namespace IdentitySample.Controllers
             {
                 return RedirectToAction("Login");
             }
-
             // Sign in the user with this external login provider if the user already has a login
             var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
             switch (result)

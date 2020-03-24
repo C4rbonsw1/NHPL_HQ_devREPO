@@ -19,6 +19,7 @@ namespace IdentitySample.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public virtual Practice PracticeFK {get; set;}
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -275,6 +275,10 @@
     <Compile Include="Migrations\202003090927212_remove months model.Designer.cs">
       <DependentUpon>202003090927212_remove months model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003121630310_PracticeFKAddToUserTbl.cs" />
+    <Compile Include="Migrations\202003121630310_PracticeFKAddToUserTbl.Designer.cs">
+      <DependentUpon>202003121630310_PracticeFKAddToUserTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accordian.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -829,6 +833,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003090927212_remove months model.resx">
       <DependentUpon>202003090927212_remove months model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121630310_PracticeFKAddToUserTbl.resx">
+      <DependentUpon>202003121630310_PracticeFKAddToUserTbl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

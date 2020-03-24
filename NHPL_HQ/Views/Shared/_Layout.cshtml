@@ -12,40 +12,65 @@
     <link href="~/Content/css/customStyles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-Header">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("NHPL HQ", "Index", "Home", null, new { @class = "navbar-brand" })
+    <div class="templatemo-flex-row">
+        <div class="templatemo-sidebar">
+            <header class="templatemo-site-header">
+                @*<div class="square"></div>*@
+                <a href="@Url.Action("Index", "Home")"><h1>NHPL HQ</h1></a>
+            </header>
+            <div class="profile-photo-container">
+                <img src="~/Content/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
+                <div class="profile-photo-overlay"></div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            <!-- Search box -->
+            <form class="templatemo-search-form" role="search">
+                <div class="input-group">
+                    <button type="submit" class="fa fa-search"></button>
+                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                </div>
+            </form>
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <nav class="templatemo-left-nav">
+                <ul>
+                    <li><a href="~/Home/Index" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin") || User.IsInRole("General Manager") || User.IsInRole("Practice Manager"))
                     {
                         <li>@Html.ActionLink("Upload Rota", "UploadRota", "Rota")</li>
-                    }
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                    {
                         <li>@Html.ActionLink("Roles", "Index", "RolesAdmin")</li>
                         <li>@Html.ActionLink("Users", "Index", "UsersAdmin")</li>
                         <li>@Html.ActionLink("Practices", "Index", "Practices")</li>
                     }
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li><a href="">Holiday Request</a></li>
+                        <li><a href="">Shift Swap</a></li>
+                        <li><a href="data-visualization.html"><i class="fa fa-bar-chart fa-fw"></i>Profile</a></li>
+                    }
+                    <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>Notifications</a></li>
+                    @*<li><a href="~/Account/Login"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>*@
                 </ul>
-                @Html.Partial("_LoginPartial")
+            </nav>
+        </div>
+        <!-- Main content -->
+        <div class="templatemo-content col-1 light-gray-bg">
+            <div class="templatemo-top-nav-container">
+                    <nav class="templatemo-top-nav navbar-right">
+                           @Html.Partial("_LoginPartial")
+                    </nav>
+            </div>
+            <div class="container body-content">
+                @RenderBody()
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        @*
-        <hr />        <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                </footer>*@
-    </div>
+    <footer class="text-right">
+        <p>
+            Copyright &copy; 2084 Company Name
+            | Design: Template Mo
+        </p>
+    </footer>
 
 
     @Scripts.Render("~/bundles/jquery")
@@ -53,3 +78,5 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
